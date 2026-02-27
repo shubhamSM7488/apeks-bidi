@@ -1,23 +1,28 @@
 {
-  "name": "apeks-bidi",
-  "version": "0.1.0",
+  "name": "@apeks/bidi",
   "type": "module",
+  "license": "MIT",
+  "version": "0.1.0",
+  "author": "Shubham Malviya",
+  "description": "Fast, memory-efficient, spec-compliant JavaScript implementation of the Unicode Bidirectional Algorithm.",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.js"
     }
   },
-  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "sideEffects": false,
   "engines": {
     "node": ">=18"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf dist",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsc -w"
   },
   "keywords": [
     "bidi",
@@ -26,9 +31,8 @@
     "bidirectional",
     "bidi-ts"
   ],
-  "author": "Shubham Malviya",
-  "license": "MIT",
-  "description": "Fast, memory-efficient, spec-compliant JavaScript implementation of the Unicode Bidirectional Algorithm.",
-  "packageManager": "pnpm@10.28.0",
-  "sideEffects": false
+  "devDependencies": {
+    "rimraf": "^6.1.3"
+  },
+  "packageManager": "pnpm@10.28.0"
 }
