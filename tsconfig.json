@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     // File Layout
-    "rootDir": "src",
-    "outDir": "dist",
+    "rootDir": "./src",
+    "outDir": "./dist",
 
     // Environment Settings
     "target": "es2022",
-    "module": "esnext",
+    "module": "nodenext",
     "moduleResolution": "nodenext",
 
     // Other Outputs
