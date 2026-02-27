@@ -1,0 +1,34 @@
+{
+  "name": "apeks-bidi",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bidi",
+    "uba",
+    "unicode",
+    "bidirectional",
+    "bidi-ts"
+  ],
+  "author": "Shubham Malviya",
+  "license": "MIT",
+  "description": "Fast, memory-efficient, spec-compliant JavaScript implementation of the Unicode Bidirectional Algorithm.",
+  "packageManager": "pnpm@10.28.0",
+  "sideEffects": false
+}
