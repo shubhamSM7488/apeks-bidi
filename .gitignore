@@ -3,3 +3,4 @@ dist
 coverage
 .env
 _git-discipline.md
+docs/notes.md
