@@ -21,8 +21,8 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --write",
-    "format:check": "prettier --check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc --noEmit",
     "dev": "tsc -w",
