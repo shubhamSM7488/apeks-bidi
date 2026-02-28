@@ -40,7 +40,7 @@ details
 footer (optional)
 ```
 
-## Allowed Types and Scopes
+## Allowed Types
 
 - `chore`: tooling/config
 - `build`: build system
