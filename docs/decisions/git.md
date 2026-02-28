@@ -40,7 +40,7 @@ details
 footer (optional)
 ```
 
-## Allowed Types
+### Allowed Types
 
 - `chore`: tooling/config
 - `build`: build system
@@ -55,7 +55,7 @@ footer (optional)
 - `style`: formatting only
 - `ci`: CI/CD configurations
 
-## Allowed Scopes
+### Allowed Scopes
 
 - `project`: project architecture/readme/license/changelog
 - `structure`: folders
@@ -71,3 +71,29 @@ footer (optional)
 - `test`: vitest
 - `spec`: UAX9 rules/specifications
 - `api`: public api
+
+## Pre-commit Discipline
+
+- lint must pass
+- tests must pass
+- build must pass
+- diff must be reviewed
+- commit must always be atomic
+
+## Branch Discipline
+
+- branch per logical change
+- branch deleted after merge
+
+## Main Discipline
+
+- main always stable
+- main always buildable
+- main always tested
+
+## Docs Discipline
+
+- if architecture chaneges -> update docs
+- if specs rule implemented -> update docs
+- explain performance perpective to decisions if any
+- always keep trimming and organizing docs as project grows
