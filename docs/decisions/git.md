@@ -1,99 +1,179 @@
 # Git
 
-**Rules:**
+This document defines the required workflow rules for this repository.  
+All commits, branches, and documentation updates must follow these rules.
 
-- One logical change = one commit.
-- Do not mix multiple changes, feature + refactor + tooling.
-- Do not commit broken build
-- Always run lint + test before commit
+These rules exist to keep the codebase stable, traceable, and production-grade.
 
-## Branching Strategy
+---
 
-`main`: always stable, buildable
-`feature`: new work (runtime/generator)
-`fix`: bug fixes (runtime/generator)
-`docs`: docs only
-`refactor`: internal changes without logic change
-`unicode`: unicode data updates
-`release`: optional later
-`experiment`: optional later
+## Core Rules
 
-Examples:
+- One logical change = one commit
+- Do not mix unrelated changes in a single commit
+- Never commit broken build
+- Always run lint, tests, and build before committing
+- Commit history must stay readable and meaningful
+
+---
+
+## Branching
+
+### Strategy
+
+Branches are created per logical change.
+
+Allowed branch types:
+
+- main → always stable, always buildable
+- feature → new functionality (runtime / generator)
+- fix → bug fixes
+- docs → documentation only
+- refactor → internal change without behavior change
+- unicode → unicode data updates
+- release → release preparation (optional)
+- experiment → temporary research work (optional)
+
+_Examples:_
 
 ```bash
 feature/generator-parser
 feature/bidi-core
 feature/isolates
+
 fix/w1-rule
+
 docs/readme-update
+
 refactor/bitflags-layout
-unicode/15.1-update
+
+unicode/18.0-update
 ```
 
-## Commit Structure
+### Rules
+
+- Never work directly on `main`
+- `main` must never contain unfinished work
+- Keep branches small, one branch per logical change
+- Merge only when stable
+- Branch must be deleted after merge
+
+main must always be:
+
+- stable
+- buildable
+- tested
+- lint-clean
+
+main must never contain:
+
+- experiments
+- partial features
+- broken tests
+- debug code
+
+---
+
+## Commits
+
+### Format
+
+All commits must follow:
 
 ```bash
-type(scope): commit summary
+type(scope): summary
 
 details
 
 footer (optional)
 ```
 
+Summary rules:
+
+- imperative mood
+- short and precise
+- describe what changed, not why you felt like doing it
+
+_Example:_
+
+```bash
+docs(chore): add git documentation and rule definitions
+
+- add git documentation to docs/decisions
+- define git core rules
+- define branching strategy with examples
+- define commit format with example
+- define allowed types and scopes for git commits
+- define pre-commit discipline
+```
+
+---
+
 ### Allowed Types
 
-- `chore`: tooling/config
-- `build`: build system
+- chore → tooling / config / maintenance
+- build → build system
+- feat → new feature
+- fix → bug fix
+- util → new utility
+- docs → documentation
+- test → tests
+- perf → performance change
+- style → formatting only
+- ci → CI / automation
 
-- `test`: tests
-- `docs`: documentation
-- `feat`: new feature
-- `util`: new utility
-- `fix`: bug fix
-
-- `perf`: performance
-- `style`: formatting only
-- `ci`: CI/CD configurations
+---
 
 ### Allowed Scopes
 
-- `project`: project architecture/readme/license/changelog
-- `structure`: folders
-- `generator`: data parsing/generating/packaging
-- `unicode`: unicode raw data
-- `data`: generated data
-- `bits`: bit layout and flags
-- `runtime`: runtime engine
-- `config`: ts/eslint/vitest/prettier
-- `type`: ts
-- `lint`: eslint
-- `format`: prettier
-- `test`: vitest
-- `spec`: UAX9 rules/specifications
-- `api`: public api
+- project → readme / license / changelog / architecture / policies
+- structure → folder layout
+- generator → unicode parsing / normalize / pack
+- unicode → raw unicode data
+- data → generated tables / maps
+- bits → bit layout / flags
+- runtime → bidi engine runtime
+- api → public api
 
-## Pre-commit Discipline
+- config → ts / eslint / vitest / prettier
+- type → typescript types
+- lint → eslint
+- format → prettier
+- test → vitest
+
+- spec → UAX9 rules / spec logic
+
+---
+
+### Pre-commit Discipline
+
+Before every commit:
 
 - lint must pass
 - tests must pass
 - build must pass
 - diff must be reviewed
-- commit must always be atomic
+- commit must be atomic
 
-## Branch Discipline
+Command checklist (recommended):
 
-- branch per logical change
-- branch deleted after merge
+```bash
+pnpm lint
+pnpm test
+pnpm build
+git diff
+```
 
-## Main Discipline
+---
 
-- main always stable
-- main always buildable
-- main always tested
+## Philosophy
 
-## Docs Discipline
+This repository follows strict discipline because it targets:
 
-- if architecture chaneges -> update docs
-- if specs rule implemented -> update docs
-- explain performance perpective to decisions if any
-- always keep trimming and organizing docs as project grows
+- spec compliance
+- deterministic behavior
+- high performance
+- long-term maintainability
+- production-grade quality
+
+History clarity is considered part of code quality.

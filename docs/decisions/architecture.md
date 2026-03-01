@@ -1,5 +1,23 @@
 # Architecture
 
+## Documentation Discipline
+
+Documentation must be updated when:
+
+- architecture changes
+- folder structure changes
+- spec rules implemented
+- performance decisions made
+- public API changes
+- generator behavior changes
+
+Rules:
+
+- keep docs coherent
+- keep docs organized
+- prefer small updates over big rewrites
+- documentation is part of the codebase
+
 ## Folder Structure
 
 There are two separate directories:
