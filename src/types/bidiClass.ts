@@ -1,30 +1,3 @@
-export const BIDI_CLASS_COUNT = 23
-const BIDI_CLASS_NAMES = [
-  'L',
-  'R',
-  'AL',
-  'EN',
-  'ES',
-  'ET',
-  'AN',
-  'CS',
-  'NSM',
-  'BN',
-  'B',
-  'S',
-  'WS',
-  'ON',
-  'LRE',
-  'LRO',
-  'RLE',
-  'RLO',
-  'PDF',
-  'LRI',
-  'RLI',
-  'FSI',
-  'PDI',
-] as const
-
 export const enum BidiClass {
   L = 0,
   R,
@@ -51,11 +24,34 @@ export const enum BidiClass {
   PDI,
 }
 
-export function bidiClassToString(cls: BidiClass): string {
-  return BIDI_CLASS_NAMES[cls]
-}
+export const BIDI_CLASS_COUNT = 23
+export const BIDI_CLASS_NAMES = Object.freeze([
+  'L',
+  'R',
+  'AL',
+  'EN',
+  'ES',
+  'ET',
+  'AN',
+  'CS',
+  'NSM',
+  'BN',
+  'B',
+  'S',
+  'WS',
+  'ON',
+  'LRE',
+  'LRO',
+  'RLE',
+  'RLO',
+  'PDF',
+  'LRI',
+  'RLI',
+  'FSI',
+  'PDI',
+] as const)
 
-export const BIDI_CLASS_MAP: Record<string, BidiClass> = {
+export const BIDI_CLASS_MAP: Record<string, BidiClass> = Object.freeze({
   L: BidiClass.L,
   R: BidiClass.R,
   AL: BidiClass.AL,
@@ -79,12 +75,12 @@ export const BIDI_CLASS_MAP: Record<string, BidiClass> = {
   RLI: BidiClass.RLI,
   FSI: BidiClass.FSI,
   PDI: BidiClass.PDI,
+} as const)
+
+export function getBidiClassIndex(name: string): BidiClass | undefined {
+  return BIDI_CLASS_MAP[name]
 }
 
-export function bidiClassFromString(name: string): BidiClass {
-  const v = BIDI_CLASS_MAP[name]
-  if (v === undefined) {
-    throw new Error('Unkown BidiClass: ' + name)
-  }
-  return v
+export function getBidiClassName(cls: BidiClass): string {
+  return BIDI_CLASS_NAMES[cls]
 }
