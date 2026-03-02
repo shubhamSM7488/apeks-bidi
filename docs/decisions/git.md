@@ -111,35 +111,35 @@ docs(chore): add git documentation and rule definitions
 
 ### Allowed Types
 
-- chore → tooling / config / maintenance
-- build → build system
-- feat → new feature
-- fix → bug fix
-- util → new utility
-- docs → documentation
-- test → tests
-- perf → performance change
-- style → formatting only
-- ci → CI / automation
+- `chore` → tooling / config / maintenance
+- `build` → build system
+- `feat` → new feature
+- `fix` → bug fix
+- `util` → new utility
+- `docs` → documentation
+- `test` → tests
+- `perf` → performance change
+- `style` → formatting only
+- `ci` → CI / automation
 
 ---
 
 ### Allowed Scopes
 
-- project → readme / license / changelog / architecture / policies
-- structure → folder layout
-- generator → unicode parsing / normalize / pack
-- unicode → raw unicode data
-- data → generated tables / maps
-- bits → bit layout / flags
-- runtime → bidi engine runtime
-- api → public api
+- `project` → readme / license / changelog / architecture / policies
+- `structure` → folder layout
+- `generator` → unicode parsing / normalize / pack
+- `unicode` → raw unicode data
+- `data` → generated tables / maps
+- `bits` → bit layout / flags
+- `runtime` → bidi engine runtime
+- `api` → public api
 
-- config → ts / eslint / vitest / prettier
-- type → typescript types
-- lint → eslint
-- format → prettier
-- test → vitest
+- `config` → ts / eslint / vitest / prettier
+- `type` → typescript types
+- `lint` → eslint
+- `format` → prettier
+- `test` → vitest
 
 - spec → UAX9 rules / spec logic
 
